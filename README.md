@@ -84,7 +84,7 @@ Supports <b>user management, content ranking, personalized advertisements, and m
 
 <h3>Validation</h3>
 <ul>
-  <li>Swike uses <b>custom request classes</b> located in <code>app/Http/Requests</code>.</li>
+  <li>the app uses <b>custom request classes</b> located in <code>app/Http/Requests</code>.</li>
 </ul>
 
 <h3>Algorithms</h3>
