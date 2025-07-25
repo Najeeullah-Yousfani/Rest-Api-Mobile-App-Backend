@@ -125,7 +125,7 @@ Supports <b>user management, content ranking, personalized advertisements, and m
 
 <h2>✨ Author</h2>
 <p><b>Najeeullah Yousfani</b><br>
-<a href="https://linkedin.com/in/your-link">LinkedIn</a> | 
+<a href="linkedin.com/in/najeeullah">LinkedIn</a> | 
 <a href="https://github.com/Najeeullah-Yousfani">GitHub</a>
 </p>
 
