@@ -1,46 +1,133 @@
 
 <html>
-<p align="center">
-<img src="https://wpostmedia.s3.eu-west-2.amazonaws.com/utility/svg_swike_logo.svg" alt="Build Status">
-</p>
-<h1><b> Swike App </b></h1>
-<p>Backend Api's</p>
-<h3>Before moving this to any new server pleae make sure the following points</h3></br>
-    <p>Run all the migrations and seeders</p></br>
-    <p>At the end please make sure that each of the default_topics,countries table has "all" named row with id=0 </p></br>
+    <h1 align="center"><b>REST API Mobile App Backend (Social Media App)</b></h1>
 
-<h2> Developer's Key Points </h2></br>
-  <p>For validation swike is using custom request classes that can be found under Requests folder app/Http/Requests</p></br>
-  <p>All algorithms are on sql database functions area</p></br>
-  <p>These algorithms can be shifted to any other environment just using migration command</p></br>
+<p align="center">
+A <b>scalable Laravel-based REST API backend</b> designed for a social-media-like mobile application.<br>
+Supports <b>user management, content ranking, personalized advertisements, and moderation</b>, optimized for <b>high performance & low API response times</b>.
+</p>
+
+<hr>
+
+<h2>🚀 Key Features</h2>
+
+<h3>✅ Performance & Optimization</h3>
+<ul>
+  <li><b>Algorithm-Based Post Ranking</b> – Stored as <b>SQL functions</b> and deployed via <b>Laravel migrations</b> to significantly reduce API response times.</li>
+  <li><b>Normalized Database Design</b> – 30+ interrelated tables, optimized for scalability and complex queries.</li>
+</ul>
+
+<h3>✅ User & Content Management</h3>
+<ul>
+  <li><b>OAuth2-based Authentication</b> with role-based access control.</li>
+  <li><b>Posts, Reactions & Notifications</b> with real-time engagement tracking.</li>
+  <li><b>Moderation</b> – Suspicious activities & reports detection.</li>
+</ul>
+
+<h3>✅ Personalization</h3>
+<ul>
+  <li><b>Targeted Advertisements</b> – Filtered by gender, location, and topics.</li>
+  <li><b>Post Ranking Algorithms</b> – Includes:
     <ul>
-    <li> Score_Weightage </li>
-    <li> get_age_new </li>
-    <li> get_age_old </li>
-    <li> low_score </li>
-    <li> post_age_score_updater </li>
-    <li> post_follower_score_updater </li>
-    <li> post_repeat_score_updater </li>
-    <li> post_score_updater </li>
-    <li> update_post_score </li>
-    <li> within_ten </li>
-  </ul>
-  </br> 
-  <p>To change any algorithm one must change its my migration rather than changing directly on the sql</p></br>
-  <p>missing function in routes file is use to identify missing ids from the routes for example any route using route model binding it will  show the response status 404 on invalid id to change the error from 404 to 400 as invalid id we use missing method </p></br> 
-  <p>There are mainly three branches of this repositary: </p></br> 
-  <ul>
-    <li> development        =>  For development purpose </li>
-    <li> quality-assurance  =>  For quality assurance team to test </li>
-    <li> staging            =>  For live app </li>
-  </ul></br> 
-<h2> ERD </h2></br>
-<img src="ERD Swike.png">
-<h2>  Postman Collection  </h2>
-<p> Please find the attached json documentation </p>
-<a href="FindUr-App.postman_collection.json" download> Click here for Json file</a></br>
-<a href="https://documenter.getpostman.com/view/16849528/UVeKq5VG#4164cdd4-2172-4f3e-9d6d-d4f1976c3f74"> Click here for Web Url</a>
-<h3>Note :</h3></br>
-<p> All the details regarding every functions and classes are commented above function definations according to user stories</p>
-<p> Dont change algorithms directly on sql </p>
+      <li>Score_Weightage</li>
+      <li>post_age_score_updater</li>
+      <li>post_follower_score_updater</li>
+      <li>post_repeat_score_updater</li>
+      <li>update_post_score</li>
+      <li><i>(and more, see Developer Notes)</i></li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li><b>Backend Framework:</b> Laravel (PHP)</li>
+  <li><b>Database:</b> MySQL with SQL functions for algorithm optimization</li>
+  <li><b>Authentication:</b> OAuth2</li>
+  <li><b>API Documentation:</b> Postman Collection included</li>
+</ul>
+
+<hr>
+
+<h2>⚙️ Installation & Setup</h2>
+<ol>
+  <li><b>Clone the repository</b><br>
+    <pre>git clone https://github.com/Najeeullah-Yousfani/Rest-Api-Mobile-App-Backend.git</pre>
+  </li>
+  <li><b>Install dependencies</b><br>
+    <pre>composer install</pre>
+  </li>
+  <li><b>Run migrations & seeders</b><br>
+    <pre>php artisan migrate --seed</pre>
+  </li>
+  <li><b>Important:</b> Ensure <code>default_topics</code> and <code>countries</code> table have an <b>“all” row</b> with <b>id = 0</b>.</li>
+</ol>
+
+<hr>
+
+<h2>🗄 Database Design (ERD)</h2>
+<img src="ERD%20Swike.png" alt="ERD">
+
+<hr>
+
+<h2>📖 API Documentation</h2>
+<ul>
+  <li><b>Postman JSON:</b> <a href="FindUr-App.postman_collection.json" download>Download here</a></li>
+  <li><b>Web Documentation:</b> <a href="https://documenter.getpostman.com/view/16849528/UVeKq5VG#4164cdd4-2172-4f3e-9d6d-d4f1976c3f74">View Here</a></li>
+</ul>
+
+<hr>
+
+<h2>👨‍💻 Developer Notes</h2>
+
+<h3>Validation</h3>
+<ul>
+  <li>Swike uses <b>custom request classes</b> located in <code>app/Http/Requests</code>.</li>
+</ul>
+
+<h3>Algorithms</h3>
+<ul>
+  <li>All ranking & scoring algorithms are implemented as <b>SQL database functions</b>.</li>
+  <li>These algorithms can be shifted to any other environment using <b>Laravel migration commands</b> (no direct SQL modification required).</li>
+  <li>Available Algorithms:
+    <ul>
+      <li>Score_Weightage</li>
+      <li>get_age_new</li>
+      <li>get_age_old</li>
+      <li>low_score</li>
+      <li>post_age_score_updater</li>
+      <li>post_follower_score_updater</li>
+      <li>post_repeat_score_updater</li>
+      <li>post_score_updater</li>
+      <li>update_post_score</li>
+      <li>within_ten</li>
+    </ul>
+  </li>
+  <li><b>Important:</b> To modify any algorithm, change its migration rather than editing SQL directly.</li>
+</ul>
+
+<h3>Routing</h3>
+<ul>
+  <li>The <b>missing function</b> in the routes file identifies missing IDs using route model binding.  
+  Example: For invalid IDs, it changes response from <code>404</code> to <code>400</code> (invalid ID).</li>
+</ul>
+
+<h3>Branches</h3>
+<ul>
+  <li><code>development</code> → For development purposes</li>
+  <li><code>quality-assurance</code> → For QA team testing</li>
+  <li><code>staging</code> → For live app testing</li>
+</ul>
+
+<hr>
+
+<h2>✨ Author</h2>
+<p><b>Najeeullah Yousfani</b><br>
+<a href="https://linkedin.com/in/your-link">LinkedIn</a> | 
+<a href="https://github.com/Najeeullah-Yousfani">GitHub</a>
+</p>
+
+
 </html>
